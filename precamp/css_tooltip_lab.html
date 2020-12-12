@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tt{
+            border:5px solid red ;
+            display:inline-block;
+        }
+.tt_text{
+    visibility:hidden;
+    background-color: yellow;
+    padding: 10px;
+}
+    .tt:hover + .tt_text{
+    visibility:visible;
+    }
+</style>
+</head>
+
+<body>
+    <h3>tooltip:เมื่อเอาเม้าส์มาชี้สิ่งที่กำหนดจะปรากฏกล่องข้อความ</h3>
+    <div class="tt">เอาเม้าส์มาชี้ตรงนี้</div>
+    <span class="tt_text">tooltip text</span>
+</body>
+
+</html>

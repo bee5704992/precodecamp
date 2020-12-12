@@ -1,0 +1,31 @@
+class UserTemplate{
+constructor(name,password,age,timeCreated) {
+this.name = name
+this.password = password
+this.age = age
+this.time_created = timeCreated
+this.connected = false
+}
+login(){
+this.connected = true
+console.log('your login status:',this.connected)
+}
+logout(){
+this.connected = false
+console.log('your login status:',this.connected)
+}
+}
+
+user1 = new UserTemplate('Andy','aaa',25,'01/01/2021 13:30')
+
+ถ้าloginใส่คำสั่งนี้
+console.log(user1.name)
+console.log(user1.age)
+console.log(user1.time_created)
+user1.login()
+
+ถ้าlogoutใส่คำสั่งนี้
+console.log(user1.name)
+console.log(user1.age)
+console.log(user1.time_created)
+user1.logout()

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #f4f4f4;
+        }
+
+        .lazada_header {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .lazada_header div a {
+            text-decoration: none;
+            text-align: center;
+            line-height: 20px;
+            margin: 0px 10px;
+        }
+
+        .logo_bar {
+            display: flex;
+            justify-content: center;
+            background: white;
+            padding: 10px;
+        }
+
+        .margin_in_logo_bar {
+            margin: 0px 10px;
+        }
+
+        .logo_bar2 {
+            display: flex;
+            justify-content: center;
+            background: white;
+            padding: 10px 280px 10px 0;
+        }
+
+        .dropdown {
+            position: relative;
+            display: block;
+            line-height: 20px;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #container {
+            min-height: 315px;
+        }
+
+        .login-title {
+            width: 810px;
+            margin: 50px auto 15px;
+            height: 26px;
+            line-height: 26px;
+        }
+
+        .login-title h3 {
+            font-size: 22px;
+            color: #424242;
+            font-weight: 400;
+        }
+
+        .login-other {
+            float: right;
+            margin-top: -48px;
+            color: #757575;
+        }
+
+        .mod-login {
+            width: 810px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 30px auto;
+            padding: 25px 50px 50px 25px;
+            background-color: #fff;
+            color: #757575;
+            min-height: 250px;
+        }
+
+        .mod-login-col1 {
+            width: 380px;
+            float: left;
+        }
+
+        .mod-input {
+            position: relative;
+        }
+
+        .mod-input label {
+            font-size: 12px;
+            height: 15px;
+            line-height: 15px;
+            overflow: hidden;
+            color: #424242;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mod-input input {
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            height: 40px;
+            padding: 0 35px 0 10px;
+            margin-bottom: 2px;
+            outline: none;
+        }
+
+        .mod-input span {
+            min-height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+            color: #f44336;
+            visibility: hidden;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .mod-login-forgot {
+            margin-top: -7px;
+            text-align: right;
+            font-size: 12px;
+        }
+
+        .mod-login-col2 {
+            width: 305px;
+            float: right;
+        }
+
+        .mod-login-btn {
+            margin: 12px 0;
+        }
+
+        .mod-login button {
+            width: 100%;
+        }
+
+        .mod-third-party-login-line {
+            margin-bottom: 12px;
+        }
+
+        .mod-third-party-login-bd {
+            -webkit-box-align: center;
+            align-items: center;
+        }
+
+        .mod-third-party-login-fb {
+            background: #3b5998;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        .mod-third-party-login-google {
+            background: #d34836;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 3px;
+        }
+
+        .mod-button {
+            display: block;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+        }
+
+        .footer-first {
+            background: #f6f6f6;
+            padding: 20px 0 25px;
+            color: #fff;
+        }
+
+        .lzd-footer-inner {
+            margin: 0 auto;
+            width: 1188px;
+            overflow: hidden;
+        }
+
+        .lzd-footer-width-25 {
+            width: 25%;
+            float: left;
+            overflow: hidden;
+        }
+
+        .footer-first .footer-title {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 35px;
+            margin: 0;
+            color: #0f136d;
+        }
+
+        .footer-first .footer-list {
+            padding: 0;
+            margin: 0;
+        }
+
+        li,
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        .footer-first .footer-li {
+            font-weight: 200;
+            line-height: 17px;
+            list-style: none;
+        }
+
+        .lzd-footer-width-50 {
+            width: 50%;
+            overflow: hidden;
+            float: left;
+        }
+
+        .footer-first .lzd-footer-app-downloads {
+            margin-top: 25px;
+        }
+
+        .footer-first .lzd-footer-app-downloads .icon-logo-lazada-footer {
+            background-size: cover;
+            width: 42px;
+            height: 42px;
+        }
+
+        .footer-first .lzd-footer-app-downloads .lzd-app-download-text {
+            padding: 0 15px;
+        }
+
+        .pull-left {
+            float: left;
+        }
+
+        .footer-first .lzd-footer-app-downloads .lzd-app-download-text .title {
+            font-size: 16px;
+            font-weight: 300;
+            color: #f36f36;
+        }
+
+        .footer-first .lzd-footer-app-downloads .lzd-app-download-text .text {
+            font-size: 14px;
+            font-weight: 300;
+            color: #0f136d;
+            padding-top: 2px;
+        }
+
+        .footer-first .lzd-footer-app-downloads .lzd-app-download-text {
+            padding: 0 15px;
+        }
+
+        .footer-first .lzd-footer-app-downloads .icon-appStore-footer {
+            background-position: -190px -124px;
+            width: 126px;
+            height: 42px;
+            margin: 1px 0 0 20px;
+        }
+
+        .desktop-footer a {
+            text-decoration: none;
+            color: #888;
+        }
+
+        .lzd-footer-sprit {
+            background-image: url(https://laz-img-cdn.alicdn.com/tfs/TB1dFECEMTqK1RjSZPhXXXfOFXa-986-931.png);
+            display: inline-block;
+        }
+
+        .footer-first .lzd-footer-app-downloads .icon-android-footer {
+            background-position: -568px -374px;
+            width: 128px;
+            height: 43px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="lazada_header">
+            <div><a href="#">change language</a></div>
+            <div><a href="#">ลงชื่อเข้าใช้</a></div>
+            <div><a href="#">ติดตามสินค้า</a></div>
+            <div><a href="#">ช่วยเหลือ</a></div>
+            <div><a href="#">ขายสินค้ากับลาซาด้า</a></div>
+            <div><a href="#">ช้อปคุ้มกว่าเดิมบนแอป</a></div>
+        </div>
+        <div class="logo_bar">
+            <img class="margin_in_logo_bar"
+                src="//laz-img-cdn.alicdn.com/images/ims-web/TB1KB2laMFY.1VjSZFnXXcFHXXa.png"
+                style="width:127px;height:40px;">
+            <input class="margin_in_logo_bar" type="text" placeholder="ช่องค้นหาในลาซาด้า" style="width: 400px;">
+            <button class="margin_in_logo_bar" style="width: 80px;">link1</button>
+            <button class="margin_in_logo_bar" style="width: 80px;">link2</button>
+        </div>
+        <div class="logo_bar2">
+            <div class="dropdown">
+                <div>dropdown</div>
+                <div class="dropdown-content">
+                    <p>dropdown-content1</p>
+                    <p>dropdown-content2</p>
+                    <p>dropdown-content3</p>
+                    <p>dropdown-content4</p>
+                    <p>dropdown-content5</p>
+                    <p>dropdown-content6</p>
+                    <p>dropdown-content7</p>
+                    <p>dropdown-content8</p>
+                    <p>dropdown-content9</p>
+                    <p>dropdown-content10</p>
+                </div>
+            </div>
+            <button class="margin_in_logo_bar" style="width: 80px;">link1</button>
+            <button class="margin_in_logo_bar" style="width: 80px;">link2</button>
+            <button class="margin_in_logo_bar" style="width: 80px;">link3</button>
+            <button class="margin_in_logo_bar" style="width: 80px;">link4</button>
+        </div>
+
+    </div>
+    <a
+        href="https://member.lazada.co.th/user/login?lzdmflt=p&redirect=http%3A%2F%2Fcheckout.lazada.co.th%2Fshipping%3Fspm%3Da2o4m.pdp.main_page.bottom_bar_main_button">ลิ้งค์เว็บช็อปปิ้งคลิกที่นี่</a>
+    <div id="container">
+        <div class="login-title">
+            <h3>ยินดีต้อนรับเข้าสู่ลาซาด้า กรุณาเข้าสู่ระบบ</h3>
+            <div class="login-other"><span>สมาชิกใหม่? <a
+                        href="/user/register?redirect=http%3A%2F%2Fcheckout.lazada.co.th%2Fshipping%3Fspm%3Da2o4m.pdp.main_page.bottom_bar_main_button">ลงทะเบียน</a>
+                    ที่นี่</span></div>
+        </div>
+        <div class="mod-login">
+            <div class="mod-login-col1">
+                <div class="mod-input mod-login-input-loginName mod-input-loginName">
+                    <label>หมายเลขโทรศัพท์หรืออีเมล์</label><input type="text"
+                        placeholder="โปรดป้อนหมายเลขโทรศัพท์หรืออีเมลของคุณ" data-meta="Field"
+                        value=""><b></b><span></span>
+                </div>
+                <div class="mod-input mod-input-password mod-login-input-password mod-input-password">
+                    <label>รหัสผ่าน</label><input type="password" placeholder="กรุณาระบุรหัสผ่าน" data-meta="Field"
+                        value=""><b></b><span></span>
+                    <div class="mod-input-password-icon"></div>
+                </div>
+                <div class="mod-login-forgot"><a href="https://member.lazada.co.th/user/forget-password">ลืมรหัสผ่าน</a>
+                </div>
+            </div>
+            <div class="mod-login-col2">
+                <div class="mod-login-btn"><button type="submit"
+                        class="next-btn next-btn-primary next-btn-large">เข้าสู่ระบบ</button></div>
+                <div class="mod-login-third">
+                    <div class="mod-third-party-login mod-login-third-btns">
+                        <div class="mod-third-party-login-line"><span>หรือเข้าสู่ระบบด้วย</span></div>
+                        <div class="mod-third-party-login-bd"><button
+                                class="mod-button mod-button mod-third-party-login-btn mod-third-party-login-fb">Facebook</button><button
+                                class="mod-button mod-button mod-third-party-login-btn mod-third-party-login-google">Google</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer-first">
+        <div class="lzd-footer-inner" data-spm="footer_top">
+            <div class="lzd-footer-width-25">
+                <h3 class="footer-title">ศูนย์ดูแลลูกค้า</h3>
+                <ul class="footer-list">
+
+                    <li class="footer-li"><a href="//www.lazada.co.th/helpcenter/">ศูนย์ช่วยเหลือ</a></li>
+
+                    <li class="footer-li"><a href="//www.lazada.co.th/helpcenter/orders/">การสั่งซื้อสินค้า</a></li>
+
+                    <li class="footer-li"><a
+                            href="//www.lazada.co.th/helpcenter/shipping-and-delivery/">การส่งสินค้า</a></li>
+
+                    <li class="footer-li"><a
+                            href="//www.lazada.co.th/helpcenter/products-on-lazada/#answer-faq-internationalproduct-ans">นโยบายของสินค้าต่างประเทศ</a>
+                    </li>
+
+                    <li class="footer-li"><a
+                            href="//www.lazada.co.th/helpcenter/returns-refunds/#answer-faq-return-ans">การคืนสินค้า</a>
+                    </li>
+
+                    <li class="footer-li"><a href="//www.lazada.co.th/contact/">ติดต่อเรา</a></li>
+
+
+                </ul>
+            </div>
+            <div class="lzd-footer-width-25">
+                <h3 class="footer-title">ลาซาด้า</h3>
+                <ul class="footer-list">
+
+                    <li class="footer-li">
+
+                        <a href="//group.lazada.com/en/about/">เกี่ยวกับลาซาด้า</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.co.th/affiliate/">Afﬁliate Program</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.com/work-at-lazada/">ร่วมงานกับเรา</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.co.th/terms-of-use/">ข้อตกลงและเงื่อนไข</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.co.th/privacy-policy/">นโยบายความเป็นส่วนตัว</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.co.th/press/">ข่าวประชาสัมพันธ์</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.co.th/security/">ความปลอดภัยกับลาซาด้า</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.co.th/popular-product/">สินค้ายอดนิยม</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="https://pages.lazada.co.th/wow/i/th/LandingPage/IPR">Intellectual Property
+                            Protection</a>
+
+                    </li>
+
+                </ul>
+            </div>
+            <div class="lzd-footer-width-50">
+
+
+                <div class="lzd-footer-app-downloads">
+                    <div class="lzd-footer-appIcon pull-left logo icon-logo-lazada-footer">
+                    </div>
+                    <div class="pull-left lzd-app-download-text">
+                        <div class="title">Go where your heart beats</div>
+                        <div class="text">Download the App</div>
+                    </div>
+                    <a class="lzd-footer-sprit pull-left icon-appStore-footer icon-appstore-footer"
+                        href="https://bit.ly/lazada-ios-app"></a>
+                    <a class="lzd-footer-sprit pull-left icon-android-footer icon-appstore-footer"
+                        href="https://bit.ly/lazada-android-app"></a>
+                </div>
+                <div class="clear"></div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-second">
+        <div class="lzd-footer-inner">
+            <div class="lzd-footer-width-50">
+                <h3 class="lzd-footer-h3">วิธีการชำระเงิน</h3>
+
+
+                <span class="lzd-icon-payment lzd-footer-sprit"
+                    style="background-position: -0px -771px;width: 89px; "></span>
+
+
+
+                <span class="lzd-icon-payment lzd-footer-sprit" style="background-position: -768px -768px; "></span>
+
+
+
+                <span class="lzd-icon-payment lzd-footer-sprit" style="background-position: -329px -768px; "></span>
+
+
+
+                <span class="lzd-icon-payment lzd-footer-sprit" style="background-position: -282px -828px; "></span>
+
+
+            </div>
+            <div class="lzd-footer-width-25">
+                <h3 class="lzd-footer-h3">Delivery Services</h3>
+
+
+                <span class="lzd-icon-delivery lzd-footer-sprit lzd-footer-sprit-th "
+                    style="background-position: -6px -168px; width: 75px; height: 37px; background-size: 500px"></span>
+
+
+
+                <span class="lzd-icon-delivery lzd-footer-sprit lzd-footer-sprit-th "
+                    style="background-position: -362px -25px; width: 56px; height: 39px; background-size: 500px"></span>
+
+
+
+                <img class="lzd-icon-delivery "
+                    src="https://laz-img-cdn.alicdn.com/tfs/TB1T_EMSkPoK1RjSZKbXXX1IXXa-311-118.png"
+                    alt="Lazada Express" style="height: 31px;  ">
+
+
+
+                <span class="lzd-icon-delivery lzd-footer-sprit lzd-footer-sprit-th "
+                    style="background-position: -1102px -167px; width: 74px; height: 30px; background-size: 500px"></span>
+
+
+
+                <span class="lzd-icon-delivery lzd-footer-sprit lzd-footer-sprit-th "
+                    style="background-position: -861px -149px; width: 80px; height: 30px; background-size: 500px"></span>
+
+
+
+                <span class="lzd-icon-delivery lzd-footer-sprit lzd-footer-sprit-th "
+                    style="background-position: -778px -219px; width: 80px; height: 30px; background-size: 500px"></span>
+
+
+
+                <span class="lzd-icon-delivery lzd-footer-sprit lzd-footer-sprit-th "
+                    style="background-position: -933px -588px; width: 44px; height: 30px; "></span>
+
+
+
+                <span class="lzd-icon-delivery lzd-footer-sprit lzd-footer-sprit-th "
+                    style="background-position: -362px -101px; width: 56px; height: 40px; background-size: 500px"></span>
+
+
+            </div>
+            <div class="lzd-footer-width-25">
+                <h3 class="lzd-footer-h3">Verified by</h3>
+
+                <div class="pull-left">
+
+
+
+
+                    <a href="https://laz-img-cdn.alicdn.com/tfs/TB1GBlUvYH1gK0jSZFwXXc7aXXa-1062-1488.png"
+                        target="_blank">
+                        <img class="img-verify img-pointer"
+                            src="https://laz-img-cdn.alicdn.com/tfs/TB1lbmoqYr1gK0jSZR0XXbP8XXa-340-200.png" alt="ISO"
+                            style="height: 60px;">
+
+
+                    </a>
+
+
+
+
+                </div>
+                <div class="pull-left">
+
+
+
+
+
+
+
+
+                    <a href="https://laz-img-cdn.alicdn.com/tfs/TB1GyueoBBh1e4jSZFhXXcC9VXa-7018-9239.jpg"
+                        target="_blank">
+                        <img class="img-verify img-pointer"
+                            src="https://laz-img-cdn.alicdn.com/tfs/TB1jyJMv.H1gK0jSZSyXXXtlpXa-184-120.png"
+                            alt="PCI DSS" style="height: 60px;">
+
+
+                    </a>
+
+
+
+
+                </div>
+
+                <div class="pull-left">
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-fourth">
+        <div class="lzd-footer-inner">
+            <div class="lzd-footer-width-50" data-spm="venture">
+                <h3 class="lzd-footer-title">Lazada Southeast Asia</h3>
+                <a class="lzd-footer-sprit lzd-footer-country country-id" href="https://www.lazada.co.id"></a>
+                <a class="lzd-footer-sprit lzd-footer-country country-my" href="https://www.lazada.com.my"></a>
+                <a class="lzd-footer-sprit lzd-footer-country country-ph" href="https://www.lazada.com.ph"></a>
+                <a class="lzd-footer-sprit lzd-footer-country country-sg" href="https://www.lazada.sg"></a>
+                <a class="lzd-footer-sprit lzd-footer-country country-th" href="https://www.lazada.co.th"></a>
+                <a class="lzd-footer-sprit lzd-footer-country country-vn" href="https://www.lazada.vn"></a>
+            </div>
+            <div class="lzd-footer-width-25" data-spm="sns">
+                <h3 class="lzd-footer-title">Follow Us</h3>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://www.facebook.com/LazadaThailand"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_fbk" style="background-position: -767px -672px">
+                </a>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://twitter.com/LazadaTH"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_twr" style="background-position: -721px -671px">
+                </a>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://plus.google.com/107036678312221746599/"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_ggp" style="background-position: -767px -624px">
+                </a>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://www.instagram.com/lazada_th/"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_ins" style="background-position: -680px -624px">
+                </a>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://www.youtube.com/user/LazadaTH"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_ytb" style="background-position: -852px -671px">
+                </a>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://pinterest.com/lazadaph/"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_pnt" style="background-position: -812px -671px">
+                </a>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://blog.lazada.co.th"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_blg" style="background-position: -680px -671px">
+                </a>
+
+                <a class="lzd-follow-us-icon lzd-footer-sprit" href="https://lazadaph.tumblr.com/"
+                    data-spm-click="gostr=/lzdpub.footer.sns;locaid=d_tbl" style="background-position: -852px -624px">
+                </a>
+
+
+            </div>
+            <div class="lzd-footer-width-25">
+                <div class="lzd-footer-copyright">
+                    © Lazada 2020
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
